@@ -17,26 +17,26 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "../miniprogram/asserts/img/index.png",
-        "selectedIconPath": "../miniprogram/asserts/img/index-select.png"
+        "iconPath": "./asserts/img/index.png",
+        "selectedIconPath": "./asserts/img/index-select.png"
       },
       {
         "pagePath": "pages/index/index",
         "text": "社区",
-        "iconPath": "../miniprogram/asserts/img/community.png",
-        "selectedIconPath": "../miniprogram/asserts/img/community-select.png"
+        "iconPath": "./asserts/img/community.png",
+        "selectedIconPath": "./asserts/img/community-select.png"
       },
       {
         "pagePath": "pages/index/index",
         "text": "门店",
-        "iconPath": "../miniprogram/asserts/img/shop.png",
-        "selectedIconPath": "../miniprogram/asserts/img/shop-select.png"
+        "iconPath": "./asserts/img/shop.png",
+        "selectedIconPath": "./asserts/img/shop-select.png"
       },
       {
         "pagePath": "pages/index/index",
         "text": "我的",
-        "iconPath": "../miniprogram/asserts/img/my.png",
-        "selectedIconPath": "../miniprogram/asserts/img/my-select.png"
+        "iconPath": "./asserts/img/my.png",
+        "selectedIconPath": "./asserts/img/my-select.png"
       }
     ]
   },

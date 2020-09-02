@@ -2,28 +2,39 @@ const cloud = require('wx-server-sdk')
 
 cloud.init()
 
-// 头部横幅
+/**
+ * 通用数据访问
+ * action 支持：list、get、add、edit、delete
+ * table 支持：banner、case、recommand、shop、user、warranty
+ * {
+ *    "table": "banner",
+ *    "action": "add",
+ *    "param": {
+ *      "url": "xxx"
+ *    }
+ * }
+ */
 exports.main = async (event, context) => {
   switch (event.action) {
     // 获取列表
-    case 'getBannerList': {
-      return getBannerList(event.param)
+    case 'list': {
+      return _list(event.table, event.param)
     }
     // 获取详情
-    case 'getBanner': {
-      return getBanner(event.param)
+    case 'get': {
+      return _get(event.table, event.param)
     }
     // 删除
-    case 'deleteBanner': {
-      return deleteBanner(event.param)
+    case 'delete': {
+      return _delete(event.table, event.param)
     }
     // 新增
-    case 'addBanner': {
-      return addBanner(event.param)
+    case 'add': {
+      return _add(event.table, event.param)
     }
     // 编辑
-    case 'editBanner': {
-      return editBanner(event.param)
+    case 'edit': {
+      return _edit(event.table, event.param)
     }
     default: {
       return
@@ -31,33 +42,33 @@ exports.main = async (event, context) => {
   }
 }
 
-async function getBannerList(param) {
+async function _list(table, param) {
   const db = cloud.database()
   let resp = {}
   try {
-    resp = await db.collection('banner').get()
+    resp = await db.collection(table).get()
   } catch (error) {
     resp = error
   }
   return resp
 }
 
-async function getBanner(param) {
+async function _get(table, param) {
   const db = cloud.database()
   let resp = {}
   try {
-    resp = await db.collection('banner').doc(param._id).get()
+    resp = await db.collection(table).doc(param._id).get()
   } catch (error) {
     resp = error
   }
   return resp
 }
 
-async function deleteBanner(param) {
+async function _delete(table, param) {
   const db = cloud.database()
   const resp = {}
   try {
-    const data = await db.collection('banner').doc(param._id).remove()
+    const data = await db.collection(table).doc(param._id).remove()
     resp.code = 0
     resp.data = data
   } catch (error) {
@@ -67,11 +78,11 @@ async function deleteBanner(param) {
   return resp
 }
 
-async function addBanner(param) {
+async function _add(table, param) {
   const db = cloud.database()
   const resp = {}
   try {
-    const data = await db.collection('banner').add({data: param})
+    const data = await db.collection(table).add({data: param})
     resp.code = 0
     resp.data = data
   } catch (error) {
@@ -81,13 +92,13 @@ async function addBanner(param) {
   return resp
 }
 
-async function editBanner(param) {
+async function _edit(table, param) {
   const db = cloud.database()
   const resp = {}
   try {
     const doc = param._id
     delete param._id
-    const data = await db.collection('banner').doc(doc).update({data:param})
+    const data = await db.collection(table).doc(doc).update({data:param})
     resp.code = 0
     resp.data = data
   } catch (error) {

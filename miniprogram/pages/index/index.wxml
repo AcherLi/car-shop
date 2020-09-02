@@ -1,0 +1,51 @@
+<!--miniprogram/pages/index/index.wxml-->
+<scroll-view scroll-y="true">
+  <swiper indicator-dots="true" autoplay="true" indicator-color="#E0E0E0" indicator-active-color="#D32F2F">
+    <block wx:for="{{bannerList}}" wx:key="item">
+      <swiper-item>
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="tab-list">
+    <view>
+      <view class="item-icon"></view>
+      <text class="item-text">品牌介绍</text>
+    </view>
+    <view>
+      <view class="item-icon"></view>
+      <text class="item-text">质保查询</text>
+    </view>
+    <view>
+      <view class="item-icon"></view>
+      <text class="item-text">报价查询</text>
+    </view>
+    <view>
+      <view class="item-icon"></view>
+      <text class="item-text">经销商登录</text>
+    </view>
+  </view>
+  <view class="sub-title">
+    <view class="title-left">
+      <image class="nav" src="../../asserts/img/nav.png"></image>
+      <text>新品推荐</text>
+    </view>
+    <image class="arrow-right" src="../../asserts/img/right.png"></image>
+  </view>
+  <view class="recommend">
+    <view class="recommend-item" wx:for="{{recommendList}}" wx:key="{{item.id}}">
+      <image src="{{item.imgUrl}}"></image>
+      <view class="recommend-desc">{{item.desc}}</view>
+      <view class="recommend-mark">{{item.mark}}</view>
+    </view>
+  </view>
+  <view>
+    <view class="thr-title">
+      <image class="arrow-right" src="../../asserts/img/title-l.png"></image>
+      <view class="thr-text">精彩案例</view>
+      <image class="arrow-right" src="../../asserts/img/title-r.png"></image>
+    </view>
+    <view class="thr-mark">- 选择我们的理由 -</view>
+  </view>
+</scroll-view>
+

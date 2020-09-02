@@ -8,6 +8,11 @@ function userInfo(data) {
   return invokeCloud('userInfo', data)
 }
 
+function getBanner() {
+  return invokeCloud('banner', {action: 'getBanner'})
+}
+
 export {
-  userInfo
+  userInfo,
+  getBanner,
 }

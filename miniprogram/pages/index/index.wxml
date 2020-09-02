@@ -33,7 +33,7 @@
     <image class="arrow-right" src="../../asserts/img/right.png"></image>
   </view>
   <view class="recommend">
-    <view class="recommend-item" wx:for="{{recommendList}}" wx:key="{{item.id}}">
+    <view class="recommend-item" wx:for="{{recommendList}}" wx:key="id">
       <image src="{{item.imgUrl}}"></image>
       <view class="recommend-desc">{{item.desc}}</view>
       <view class="recommend-mark">{{item.mark}}</view>
@@ -46,6 +46,61 @@
       <image class="arrow-right" src="../../asserts/img/title-r.png"></image>
     </view>
     <view class="thr-mark">- 选择我们的理由 -</view>
+  </view>
+  <view class="example-list">
+    <view class="example-item" wx:for="{{exampleList}}" wx:key="id">
+      <view class="example-count">{{item.count}}人浏览</view>
+      <image class="example-image" src="{{item.imgUrl}}"></image>
+      <view class="example-con">
+        <view class="example-desc">
+          <view class="example-text">{{item.desc}}</view>
+          <view class="example-mark">{{item.mark}}</view>
+        </view>
+        <view class="example-author">
+          <image src="{{item.avatar}}"></image>
+          <view>{{item.nickName}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="more">查看更多案例</view>
+  <view>
+    <view class="thr-title">
+      <image class="arrow-right" src="../../asserts/img/title-l.png"></image>
+      <view class="thr-text">产品优势</view>
+      <image class="arrow-right" src="../../asserts/img/title-r.png"></image>
+    </view>
+    <view class="thr-mark">- 6大核心优势 -</view>
+  </view>
+
+  <view class="superiority-list">
+    <view class="superiority-item" wx:for="{{superiorityList}}" wx:key="id">
+      <view class="superiority-con {{item.id % 2 === 0 ? 'active' : ''}}">
+        <image src="{{item.imgUrl}}"></image>
+        <view class="superiority-desc">
+          <view class="superiority-index">0{{item.id}}</view>
+          <view class="example-text">{{item.desc}}</view>
+          <view class="example-mark">{{item.mark}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="thr-title">
+      <image class="arrow-right" src="../../asserts/img/title-l.png"></image>
+      <view class="thr-text">联系我们</view>
+      <image class="arrow-right" src="../../asserts/img/title-r.png"></image>
+    </view>
+    <view class="thr-mark">　</view>
+  </view>
+  <view class="contact">
+    <view class="contact-list">
+      <view class="contact-item"  wx:for="{{contactList}}" wx:key="id">
+        <image src="{{item.icon}}"></image>
+        <view>{{item.text}}</view>
+      </view>
+    </view>
+    <image class="contact-qr" src="../../asserts/img/qr.png"></image>
   </view>
 </scroll-view>
 

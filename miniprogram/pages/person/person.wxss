@@ -1,0 +1,79 @@
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .6);
+  display: flex;
+  align-items: center;
+}
+.auth-btn {
+  background: #D32F2F;
+  border-radius: 14rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+.header {
+  padding: 50rpx 0;
+  border-radius: 0 0 20rpx 20rpx;
+  box-shadow: 0rpx 2rpx 4rpx #A51311;
+  background: url("https://7072-production-j3smc-1303038162.tcb.qcloud.la/person.png?sign=147d0bad78685d13011357d6aeef4d34&t=1599138640");
+  background-position: center bottom;
+  background-size: 100% auto;
+}
+.avatar{
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+}
+.avatar{
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+}
+.username {
+  display: block;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 40rpx;
+}
+.body {
+  margin: 40rpx 30rpx;
+  padding: 0 20rpx;
+  background: #323232;
+  border-radius: 20rpx;
+}
+.list {
+  position: relative;
+  padding: 0 0rpx 0 60rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #434343;
+}
+.list:last-of-type {
+  border-bottom: none;
+}
+.contact-btn {
+  position: absolute;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.arrow-right {
+  width: 42rpx;
+  height: 42rpx;
+}

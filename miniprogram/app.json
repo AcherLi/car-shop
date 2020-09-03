@@ -1,6 +1,9 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/person/person",
+    "pages/shop/shop",
+    "pages/community/community"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2b2b2b",
@@ -21,19 +24,19 @@
         "selectedIconPath": "./asserts/img/index-select.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/community/community",
         "text": "社区",
         "iconPath": "./asserts/img/community.png",
         "selectedIconPath": "./asserts/img/community-select.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/shop/shop",
         "text": "门店",
         "iconPath": "./asserts/img/shop.png",
         "selectedIconPath": "./asserts/img/shop-select.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/person/person",
         "text": "我的",
         "iconPath": "./asserts/img/my.png",
         "selectedIconPath": "./asserts/img/my-select.png"

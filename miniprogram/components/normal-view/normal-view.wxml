@@ -1,0 +1,8 @@
+<view class="normal-view" data-url="{{item.url}}" bindtap="navTo" >
+  <image src="{{item.imgUrl}}"></image>
+  <view class="desc">
+    <view class="title">{{item.title}}</view>
+    <view class="date">{{item.date}}</view>
+    <view class="count">{{item.count}}人浏览</view>
+  </view>
+</view>

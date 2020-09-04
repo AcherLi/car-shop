@@ -1,0 +1,74 @@
+.common-item {
+  margin: 0 0 40rpx 0;
+  border-radius: 30rpx;
+  overflow: hidden;
+  background: #323232;
+  position: relative;
+}
+.common-image{
+  width: 100%;
+  height: 360rpx;
+}
+.common-count {
+  position: absolute;
+  padding: 8rpx 18rpx;
+  font-size: 24rpx;
+  right: 0;
+  top: 300rpx;
+  border-radius: 20rpx 0 0 20rpx;
+  color: #fff;
+  background: rgba(0, 0, 0, .6);
+}
+.common-main{
+  padding: 10rpx 30rpx 20rpx;
+}
+.common-desc {
+  font-size: 30rpx;
+  padding: 0 0 4rpx;
+  flex: 0 0 420rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.common-mark {
+  font-size: 24rpx;
+  color: #434343;
+}
+.common-con {
+  padding: 10rpx 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 40rpx;
+  font-size: 28rpx;
+}
+.common-author {
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.author-mark {
+  font-size: 24rpx;
+  color: #434343;
+}
+.common-author image {
+  margin-right: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+}
+.common-name {
+  font-size: 24rpx;
+}
+.great {
+  padding: 0 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.great image {
+  margin-right: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}

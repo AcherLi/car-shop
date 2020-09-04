@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/person/person",
     "pages/shop/shop",
-    "pages/community/community"
+    "pages/community/community",
+    "pages/web-view/web-view"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2b2b2b",

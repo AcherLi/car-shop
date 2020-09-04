@@ -1,0 +1,31 @@
+.normal-view {
+  border-radius: 30rpx;
+  overflow: hidden;
+  margin-bottom: 60rpx;
+  background: #323232;
+}
+.normal-view image {
+  width: 100%;
+  height: 320rpx;
+}
+.desc {
+  padding: 20rpx 40rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.title {
+  width: 100%;
+  font-size: 32rpx;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+}
+.date {
+  font-size: 26rpx;
+  color: #434343;
+}
+.count {
+  font-size: 26rpx;
+  color: #D32F2F;
+}

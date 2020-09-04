@@ -33,11 +33,7 @@
     <image class="arrow-right" src="../../asserts/img/right.png"></image>
   </view>
   <view class="recommend">
-    <view class="recommend-item" wx:for="{{recommendList}}" wx:key="id">
-      <image src="{{item.imgUrl}}"></image>
-      <view class="recommend-desc">{{item.desc}}</view>
-      <view class="recommend-mark">{{item.mark}}</view>
-    </view>
+    <common-view class="recommend-item" wx:for="{{recommendList}}" wx:key="id" item="{{item}}"></common-view>
   </view>
   <view>
     <view class="thr-title">
@@ -48,20 +44,7 @@
     <view class="thr-mark">- 选择我们的理由 -</view>
   </view>
   <view class="example-list">
-    <view class="example-item" wx:for="{{exampleList}}" wx:key="id">
-      <view class="example-count">{{item.count}}人浏览</view>
-      <image class="example-image" src="{{item.imgUrl}}"></image>
-      <view class="example-con">
-        <view class="example-desc">
-          <view class="example-text">{{item.desc}}</view>
-          <view class="example-mark">{{item.mark}}</view>
-        </view>
-        <view class="example-author">
-          <image src="{{item.avatar}}"></image>
-          <view>{{item.nickName}}</view>
-        </view>
-      </view>
-    </view>
+    <common-view class="example-item" wx:for="{{exampleList}}" wx:key="id" item="{{item}}"></common-view>
   </view>
   <view class="more">查看更多案例</view>
   <view>

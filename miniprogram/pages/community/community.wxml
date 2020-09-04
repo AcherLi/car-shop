@@ -1,2 +1,32 @@
-<!--miniprogram/pages/community/community.wxml-->
-<text>miniprogram/pages/community/community.wxml</text>
+<view>
+  <view class="nav">
+    <view class="tab">
+      <view
+        wx:for="{{tabList}}"
+        class="tab-item {{current === index ? 'active' : ''}}"
+        bindtap="clickNav"
+        data-current="{{index}}"
+        wx:key="index"
+      >
+        {{item}}
+      </view>
+    </view>
+    <view class="bar" style="left: {{(current * 25) + '%'}}">
+      <view class="bar-con"></view>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" class="con">
+    <view class="con-item" wx:if="{{current === 0}}">
+      <common-view class="example-item" wx:for="{{exampleList}}" wx:key="id" item="{{item}}"></common-view>
+    </view>
+    <view class="con-item" wx:elif="{{current === 1}}">
+      <normal-view wx:for="{{tecList}}" wx:key="index" item="{{item}}"/>
+    </view>
+    <view class="con-item" wx:elif="{{current === 2}}">
+      <normal-view wx:for="{{queList}}" wx:key="index" item="{{item}}"/>
+    </view>
+    <view class="con-item" wx:else>
+      <normal-view wx:for="{{newList}}" wx:key="index" item="{{item}}"/>
+    </view>
+  </scroll-view>
+</view>

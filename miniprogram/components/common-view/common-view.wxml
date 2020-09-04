@@ -1,0 +1,22 @@
+<view class="common-item">
+  <view wx:if="{{item.count}}" class="common-count">{{item.count}}人浏览</view>
+  <image class="common-image" src="{{item.imgUrl}}"></image>
+  <view class="common-main">
+    <view class="common-desc">{{item.desc}}</view>
+    <view class="common-mark">{{item.mark}}</view>
+    <view class="common-con" wx:if="{{item.avatar}}">
+      <view class="common-author">
+        <image src="{{item.avatar}}"></image>
+        <view class="right">
+          <view class="common-name">{{item.nickName}}</view>
+          <view class="author-mark">{{item.date}}</view>
+        </view>
+      </view>
+      <view class="great">
+        <image wx:if="{{item.great}}" src="../../asserts/img/great-select.png"></image>
+        <image wx:else src="../../asserts/img/great.png"></image>
+        <view>{{item.greatCount || 0}}</view>
+      </view>
+    </view>
+  </view>
+</view>

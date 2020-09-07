@@ -1,0 +1,18 @@
+<view class="info">
+  <view class="left">
+    <view class="item-title">
+      <view class="name">{{item.name}}</view>
+      <view class="score">{{item.score}}分</view>
+      <view class="case">{{item.case}}案例</view>
+    </view>
+    <view class="addr">
+      <view>{{item.distance}}Km丨{{item.address}}</view>
+    </view>
+  </view>
+  <image
+    data-lat="{{item.pos.latitude}}"
+    data-lng="{{item.pos.longitude}}"
+    catchtap="openLocal"
+    class="pos-icon"
+    src="../../asserts/img/pos.png"></image>
+</view>

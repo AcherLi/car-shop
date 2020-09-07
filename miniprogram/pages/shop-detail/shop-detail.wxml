@@ -1,0 +1,19 @@
+<view>
+  <swiper class="banner" indicator-dots="true" autoplay="true" indicator-color="#E0E0E0" indicator-active-color="#D32F2F">
+    <block wx:for="{{bannerList}}" wx:key="item">
+      <swiper-item>
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="con">
+    <shop-info item="{{info}}"/>
+  </view>
+  <view class="con">
+    <phone-info item="{{info}}" />
+  </view>
+  <view class="case-con">
+    <sub-title class="sub-title" title="精彩案例" desc="" />
+    <common-view class="example-item" wx:for="{{exampleList}}" wx:key="id" item="{{item}}"></common-view>
+  </view>
+</view>

@@ -69,8 +69,8 @@
 				},
 				{
 					"id": 1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
+					"name": "pages/shop/shop",
+					"pathName": "pages/shop/shop",
 					"query": "",
 					"scene": null
 				}

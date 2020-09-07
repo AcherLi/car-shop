@@ -1,0 +1,21 @@
+.phone{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  font-size: 20rpx;
+  color: #8F8F8F;
+}
+.phone-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+.border {
+  border: 1px solid #8f8f8f;
+  border-radius: 6rpx;
+  padding: 4rpx 6rpx;
+  margin: 0 0 16rpx;
+}
+.border:last-of-type {
+  margin-bottom: 0;
+}

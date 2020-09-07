@@ -1,2 +1,15 @@
-<!--miniprogram/pages/shop/shop.wxml-->
-<text>miniprogram/pages/shop/shop.wxml</text>
+<view class="shop">
+  <search placeholder="请输入门店名称" bindconfirm="confirm"/>
+  <view class="list">
+    <view
+      data-id="{{item.id}}"
+      class="item"
+      wx:for="{{shopList}}"
+      wx:key="index"
+      bindtap="navTo">
+      <shop-info item="{{item}}"/>
+      <image class="shop-banner" src="{{item.banner}}"></image>
+      <phone-info item="{{item}}" />
+    </view>
+  </view>
+</view>

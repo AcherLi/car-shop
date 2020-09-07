@@ -62,25 +62,6 @@ swiper image {
 .example-item {
   margin: 0 0 30rpx 0;
 }
-.thr-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.thr-title image {
-  width: 30rpx;
-  height: 30rpx;
-}
-.thr-text {
-  margin: 0 20rpx;
-  font-size: 38rpx;
-}
-.thr-mark {
-  margin: 10rpx 0 40rpx;
-  text-align: center;
-  font-size: 28rpx;
-  color: #434343;
-}
 .more {
   width: 260rpx;
   padding: 20rpx 0;

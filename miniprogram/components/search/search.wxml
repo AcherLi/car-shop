@@ -1,0 +1,4 @@
+<view class="search">
+  <image class="search-icon" src="../../asserts/img/search.png"></image>
+  <input class="input" bindconfirm="confirm" maxlength="{{maxlength}}" placeholder="{{placeholder}}" />
+</view>

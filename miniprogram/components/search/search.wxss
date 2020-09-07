@@ -1,0 +1,18 @@
+.search{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 60rpx;
+  border-radius: 60rpx;
+  background: #323232;
+}
+.search-icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 20rpx 0 0;
+}
+.search input {
+  display: block;
+  height: 60rpx;
+  line-height: 60rpx;
+  flex: 1 1 auto;
+}

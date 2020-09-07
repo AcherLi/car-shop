@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "附近门店",
+  "usingComponents": {
+    "search": "../../components/search/search",
+    "shop-info": "../../components/shop-info/shop-info",
+    "phone-info": "../../components/phone-info/phone-info"
+  }
 }

@@ -1,1 +1,15 @@
-/* miniprogram/pages/shop/shop.wxss */
+.shop {
+  padding: 20rpx 30rpx;
+}
+.shop-banner {
+  width: 100%;
+  border-radius: 20rpx;
+  height: 400rpx;
+}
+.list {
+  padding-top: 20rpx;
+}
+.item {
+  padding-top: 20rpx;
+  border-top: 1rpx solid #8f8f8f;
+}

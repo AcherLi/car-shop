@@ -1,0 +1,25 @@
+.banner {
+  height: 380rpx;
+}
+.banner image {
+  width: 100%;
+  height: 380rpx;
+}
+.con {
+  padding: 10rpx 20rpx;
+  border-bottom: 1rpx solid #666363;
+}
+.case-con {
+  padding: 60rpx 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.sub-title {
+  width: 100%;
+}
+.example-item {
+  width: 48%;
+}

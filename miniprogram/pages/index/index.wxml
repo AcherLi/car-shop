@@ -35,26 +35,12 @@
   <view class="recommend">
     <common-view class="recommend-item" wx:for="{{recommendList}}" wx:key="id" item="{{item}}"></common-view>
   </view>
-  <view>
-    <view class="thr-title">
-      <image class="arrow-right" src="../../asserts/img/title-l.png"></image>
-      <view class="thr-text">精彩案例</view>
-      <image class="arrow-right" src="../../asserts/img/title-r.png"></image>
-    </view>
-    <view class="thr-mark">- 选择我们的理由 -</view>
-  </view>
+  <sub-title title="精彩案例" desc="- 选择我们的理由 -" />
   <view class="example-list">
     <common-view class="example-item" wx:for="{{exampleList}}" wx:key="id" item="{{item}}"></common-view>
   </view>
   <view class="more">查看更多案例</view>
-  <view>
-    <view class="thr-title">
-      <image class="arrow-right" src="../../asserts/img/title-l.png"></image>
-      <view class="thr-text">产品优势</view>
-      <image class="arrow-right" src="../../asserts/img/title-r.png"></image>
-    </view>
-    <view class="thr-mark">- 6大核心优势 -</view>
-  </view>
+  <sub-title title="产品优势" desc="- 6大核心优势 -" />
 
   <view class="superiority-list">
     <view class="superiority-item" wx:for="{{superiorityList}}" wx:key="id">
@@ -68,14 +54,7 @@
       </view>
     </view>
   </view>
-  <view>
-    <view class="thr-title">
-      <image class="arrow-right" src="../../asserts/img/title-l.png"></image>
-      <view class="thr-text">联系我们</view>
-      <image class="arrow-right" src="../../asserts/img/title-r.png"></image>
-    </view>
-    <view class="thr-mark">　</view>
-  </view>
+  <sub-title title="联系我们" desc="　" />
   <view class="contact">
     <view class="contact-list">
       <view class="contact-item"  wx:for="{{contactList}}" wx:key="id">

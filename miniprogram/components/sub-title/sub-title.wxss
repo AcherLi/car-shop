@@ -1,0 +1,19 @@
+.sub-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sub-title image {
+  width: 30rpx;
+  height: 30rpx;
+}
+.sub-text {
+  margin: 0 20rpx;
+  font-size: 38rpx;
+}
+.sub-mark {
+  margin: 10rpx 0 40rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #434343;
+}

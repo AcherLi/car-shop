@@ -1,0 +1,9 @@
+<view class="phone" catchtap="phoneCall" data-phone="{{item.phone}}">
+  <view>
+    <view class="border">工作时间: {{item.openTime}} ~ {{item.closeTime}}</view>
+    <view class="border">联系电话: {{item.phone}}</view>  
+  </view>
+  <image
+    class="phone-icon"
+    src="../../asserts/img/phone.png"></image>
+</view>

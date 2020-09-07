@@ -1,66 +1,55 @@
-// miniprogram/pages/shop/shop.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    shopList: [{
+      id: 1,
+      name: '测上线',
+      score: 9.0,
+      case: 111,
+      distance: 1.2,
+      address: '详细地址',
+      phone: '17765566776',
+      openTime: '9:00',
+      closeTime: '18:00',
+      banner: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
+      pos: {
+        latitude: 31.23037,
+        longitude: 121.4737,
+      },
+    }, {
+      id: 2,
+      name: '测上线',
+      score: 9.0,
+      case: 111,
+      distance: 1.2,
+      address: '详细地址',
+      phone: '17765566776',
+      openTime: '9:00',
+      closeTime: '18:00',
+      banner: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
+      pos: {
+        latitude: 31.23037,
+        longitude: 121.4737,
+      },
+    }]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onReady() {
+    wx.getLocation({
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success (res) {
+        const latitude = res.latitude
+        const longitude = res.longitude
+        console.log(latitude, longitude)
+      }
+     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  confirm(e) {
+    const { value } = e.detail
+    console.log(value)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  navTo(e) {
+    const { id } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/shop-detail/shop-detail?id=${id}`,
+    })
   }
 })

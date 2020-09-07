@@ -1,4 +1,3 @@
-// components/normal-view/normal-view.js
 Component({
   properties: {
     item: {

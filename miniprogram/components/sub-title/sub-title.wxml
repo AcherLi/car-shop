@@ -1,0 +1,9 @@
+
+<view>
+  <view class="sub-title">
+    <image class="arrow-right" src="../../asserts/img/title-l.png"></image>
+    <view class="sub-text">{{title}}</view>
+    <image class="arrow-right" src="../../asserts/img/title-r.png"></image>
+  </view>
+  <view class="sub-mark">{{desc}}</view>
+</view>

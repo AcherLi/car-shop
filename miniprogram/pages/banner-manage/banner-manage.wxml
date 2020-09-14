@@ -1,0 +1,20 @@
+<view class="manage">
+  <view class="banner-item" wx:for="{{bannerList}}" wx:key="index">
+    <image class="img" src="{{item.url}}"></image>
+    <button
+      class="del"
+      size="mini"
+      type="warn"
+      data-id="{{item._id}}"
+      data-file="{{item.url}}"
+      bindtap="handleDel"
+    >删除</button>
+  </view>
+  <view class="con">
+    <button
+      class="add"
+      type="primary"
+      bindtap="handleAdd"
+    >新增海报</button>
+  </view>
+</view>

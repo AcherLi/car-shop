@@ -5,14 +5,21 @@
     "pages/shop/shop",
     "pages/community/community",
     "pages/web-view/web-view",
-    "pages/shop-detail/shop-detail"
+    "pages/shop-detail/shop-detail",
+    "pages/banner-manage/banner-manage",
+    "pages/quality-manage/quality-manage",
+    "pages/quality-add/quality-add",
+    "pages/quality-detail/quality-detail",
+    "pages/case-manage/case-manage",
+    "pages/case-add/case-add",
+    "pages/case-check/case-check"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2b2b2b",
     "navigationBarTextStyle": "white",
     "backgroundColor": "#eee",
     "navigationBarTitleText": "ViViTiger",
-    "backgroundTextStyle": "light"
+    "backgroundTextStyle": "dark"
   },
   "tabBar": {
     "selectedColor": "#D32F2F",

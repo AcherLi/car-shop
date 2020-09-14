@@ -1,0 +1,9 @@
+<view class="label-item">
+  <view class="left">
+    <view class="required">{{required ? '*' : ''}}</view>
+    <view class="label">{{label}}</view>
+  </view>
+  <view class="right {{type}}">
+    <slot></slot>
+  </view>
+</view>

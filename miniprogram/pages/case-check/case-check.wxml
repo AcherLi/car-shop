@@ -1,0 +1,57 @@
+<view>
+  <nav
+    tabList="{{tabList}}"
+    current="{{current}}"
+    bindchange="navChange"/>
+  <view class="list">
+    <common-view
+      class="case-item"
+      wx:for="{{caseList}}"
+      wx:key="id"
+      item="{{item}}">
+      <button
+        class="edit"
+        size="mini"
+        type="primary"
+        data-id="{{item._id}}"
+        data-url="case-detail"
+        bindtap="navTo"
+      >详情</button>
+      <button
+        wx:if="{{current === 0}}"
+        class="edit"
+        size="mini"
+        type="primary"
+        data-id="{{item._id}}"
+        data-type="access"
+        bindtap="handleAction"
+      >通过</button>
+      <button
+        wx:if="{{current === 0}}"
+        class="edit"
+        size="mini"
+        type="primary"
+        data-id="{{item._id}}"
+        data-type="refuse"
+        bindtap="handleAction"
+      >拒绝</button>
+      <button
+        wx:if="{{current === 1}}"
+        class="edit"
+        size="mini"
+        type="primary"
+        data-id="{{item._id}}"
+        data-type="down"
+        bindtap="handleAction"
+      >下架</button>
+      <button
+        class="del"
+        size="mini"
+        type="warn"
+        data-id="{{item._id}}"
+        data-type="del"
+        bindtap="handleAction"
+      >删除</button>
+    </common-view>
+  </view>
+</view>

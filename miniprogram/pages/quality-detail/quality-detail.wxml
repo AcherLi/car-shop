@@ -1,0 +1,66 @@
+<view class="con">
+  <form-title value="贴膜信息"/>
+  <form-item label="产品分类" required>
+    <view>{{ categoryList[categoryIndex].value }}</view>
+  </form-item>
+  <form-item label="产品颜色" required>
+    <view>{{ colorList[colorIndex].value }}</view>
+  </form-item>
+  <form-item label="产品卷号" required>
+    <view>{{ pasterInfo.rollNumber }}</view>
+  </form-item>
+  <form-item label="拼色方案备注说明">
+    <view>{{pasterInfo.remark}}</view>
+  </form-item>
+  <form-title value="销售信息"/>
+  <form-item label="姓名" required>
+    <view>{{saleInfo.name}}</view>
+  </form-item>
+  <form-item label="电话">
+    <view>{{saleInfo.mobile}}</view>
+  </form-item>
+  <form-item label="销售价格" required>
+    <view>{{saleInfo.price}}</view>
+  </form-item>
+  <form-title value="施工技师"/>
+  <view wx:for="{{technician}}" wx:key="index">
+    <form-item label="姓名" required>
+      <view>{{technician[index].name}}</view>
+    </form-item>
+    <form-item label="电话">
+      <view>{{technician[index].mobile}}</view>
+    </form-item>
+  </view>
+  <form-title value="施工部门"/>
+  <form-item label="施工部位" required>
+    <view>{{partList[partIndex].value}}</view>
+  </form-item>
+  <form-item label="其他部位或拼色说明">
+    <view>{{construction.remark}}</view>
+  </form-item>
+  <form-item label="安装日期" required>
+    <view>{{construction.installDate}}</view>
+  </form-item>
+  <form-item label="交车日期" required>
+    <view>{{construction.handleDate}}</view>
+  </form-item>
+  <form-item label="质保年限" required>
+    <view>{{qualityTimeList[qualityTimeIndex].value}}</view>
+  </form-item>
+  <form-title value="车主信息"/>
+  <form-item label="姓名" required>
+    <view>{{driver.name}}</view>
+  </form-item>
+  <form-item label="电话" required>
+    <view>{{driver.mobile}}</view>
+  </form-item>
+  <form-item label="车牌号码" required>
+    <view>{{driver.carNumber}}</view>
+  </form-item>
+  <form-item label="车架号码" required>
+    <view>{{driver.frameNumber}}</view>
+  </form-item>
+  <form-item label="受保车型" required>
+    <view>{{styleList[styleIndex].value}}</view>
+  </form-item>
+</view>

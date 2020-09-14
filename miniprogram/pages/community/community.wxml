@@ -1,20 +1,8 @@
 <view>
-  <view class="nav">
-    <view class="tab">
-      <view
-        wx:for="{{tabList}}"
-        class="tab-item {{current === index ? 'active' : ''}}"
-        bindtap="clickNav"
-        data-current="{{index}}"
-        wx:key="index"
-      >
-        {{item}}
-      </view>
-    </view>
-    <view class="bar" style="left: {{(current * 25) + '%'}}">
-      <view class="bar-con"></view>
-    </view>
-  </view>
+  <nav
+    tabList="{{tabList}}"
+    current="{{current}}"
+    bindchange="navChange"/>
   <scroll-view scroll-y="true" class="con">
     <view class="con-item" wx:if="{{current === 0}}">
       <common-view class="example-item" wx:for="{{exampleList}}" wx:key="id" item="{{item}}"></common-view>

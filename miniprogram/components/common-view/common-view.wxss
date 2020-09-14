@@ -67,7 +67,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.great image {
+.great .great-icon {
   margin-right: 10rpx;
   width: 40rpx;
   height: 40rpx;

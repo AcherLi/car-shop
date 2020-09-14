@@ -1,7 +1,5 @@
 {
-  "navigationBarTitleText": "社区",
   "usingComponents": {
-    "normal-view": "../../components/normal-view/normal-view",
     "common-view": "../../components/common-view/common-view",
     "nav": "../../components/nav/nav"
   }

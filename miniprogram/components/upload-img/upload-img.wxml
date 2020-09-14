@@ -1,0 +1,3 @@
+<view bindtap="upload" class="bg">
+ <view>点击上传</view>
+</view>

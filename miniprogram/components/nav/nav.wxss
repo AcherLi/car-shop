@@ -1,0 +1,32 @@
+.nav{
+  position: relative;
+  height: 100rpx;
+}
+.tab{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+.tab-item{
+  padding: 40rpx 0 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  flex: 1 1 auto;
+}
+.tab-item.active{
+  color: #D32F2F;
+}
+.bar{
+  position: absolute;
+  bottom: 0;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  transition: all .3s;
+}
+.bar-con {
+  background: #D32F2F;
+  height: 4rpx;
+  border-radius: 4rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "质保详情",
+  "usingComponents": {
+    "form-item": "../../components/form-item/form-item",
+    "form-title": "../../components/form-title/form-title"
+  }
+}

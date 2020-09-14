@@ -35,5 +35,11 @@ Page({
     console.log(e.detail.errMsg)
     console.log(e.detail.iv)
     console.log(e.detail.encryptedData)
-  }
+  },
+  navTo(e) {
+    const { page } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/${page}/${page}`,
+    })
+  } 
 })

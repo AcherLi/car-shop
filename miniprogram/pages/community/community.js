@@ -57,8 +57,8 @@ Page({
       }
     ],
   },
-  clickNav(e) {
-    const {current} = e.currentTarget.dataset
-    this.setData({current})
+  navChange(e) {
+    const { value } = e.detail
+    this.setData({current: value})
   }
 })

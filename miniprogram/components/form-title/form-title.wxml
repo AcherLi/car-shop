@@ -1,0 +1,6 @@
+<view class="form-title">
+  <view class="con">
+    <view>{{value}}</view>
+  </view>
+  <view class="bg"></view>
+</view>

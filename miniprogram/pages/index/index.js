@@ -138,7 +138,7 @@ Page({
       },
     ]
   },
-  async onReady() {
+  async onShow() {
     try {
       let { result: { data } } = await getBanner()
       data = data.map(v => v.url)
@@ -146,5 +146,11 @@ Page({
     } catch (error) {
       wx.showToast({ title: '加载banner失败' })
     }
-  }
+  },
+  navTo(e) {
+    const { url } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/${url}/${url}`,
+    })
+  },
 })

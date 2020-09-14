@@ -1,0 +1,20 @@
+<view>
+  <view class="nav">
+    <view class="tab">
+      <view
+        wx:for="{{tabList}}"
+        class="tab-item {{current === index ? 'active' : ''}}"
+        bindtap="clickNav"
+        data-current="{{index}}"
+        style="width: {{(100 / tabList.length ) + '%'}}"
+        wx:key="index">
+        {{item}}
+      </view>
+    </view>
+    <view
+      class="bar"
+      style="width: {{(100 / tabList.length ) + '%'}};left: {{(current * 100 / tabList.length ) + '%'}}">
+      <view class="bar-con"></view>
+    </view>
+  </view>
+</view>

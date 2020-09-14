@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "质保管理",
+  "usingComponents": {
+    "search": "../../components/search/search"
+  }
+}

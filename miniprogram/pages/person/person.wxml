@@ -19,8 +19,8 @@
       <view>报价查询</view>
       <image class="arrow-right" src="../../asserts/img/right.png"></image>
     </view>
-    <view class="list">
-      <view>质保录入</view>
+    <view class="list" data-page="quality-manage" bindtap="navTo">
+      <view>质保管理</view>
       <image class="arrow-right" src="../../asserts/img/right.png"></image>
     </view>
     <view class="list">
@@ -28,7 +28,7 @@
       <view>在线客服</view>
       <image class="arrow-right" src="../../asserts/img/right.png"></image>
     </view>
-    <view class="list">
+    <view class="list" data-page="case-manage" bindtap="navTo">
       <view>案例管理</view>
       <image class="arrow-right" src="../../asserts/img/right.png"></image>
     </view>
@@ -44,11 +44,11 @@
       <view>推荐管理</view>
       <image class="arrow-right" src="../../asserts/img/right.png"></image>
     </view>
-    <view class="list">
+    <view class="list" data-page="banner-manage" bindtap="navTo">
       <view>海报管理</view>
       <image class="arrow-right" src="../../asserts/img/right.png"></image>
     </view>
-    <view class="list">
+    <view class="list" data-page="case-check" bindtap="navTo">
       <view>案例审核</view>
       <image class="arrow-right" src="../../asserts/img/right.png"></image>
     </view>

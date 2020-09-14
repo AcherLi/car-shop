@@ -1,0 +1,188 @@
+<view class="con">
+  <view class="title">请正确填写和录入信息</view>
+  <view wx:if="{{step == 0}}">
+    <form-title value="贴膜信息"/>
+    <form-item label="产品分类" type="pick" required>
+      <picker
+        bindchange="categoryChange"
+        value="{{categoryIndex}}"
+        range="{{categoryList}}"
+        range-key="value">
+        <view class="picker">{{categoryList[categoryIndex].value || "请选择"}}</view>
+      </picker>
+    </form-item>
+    <form-item label="产品颜色" type="pick" required>
+      <picker
+        bindchange="colorChange"
+        value="{{colorIndex}}"
+        range="{{colorList}}"
+        range-key="value">
+        <view class="picker">{{colorList[colorIndex].value || "请选择"}}</view>
+      </picker>
+    </form-item>
+    <form-item label="产品卷号" required>
+      <input
+        bindinput="inputChange"
+        data-obj="pasterInfo"
+        data-key="rollNumber"
+        value="{{pasterInfo.rollNumber}}"
+        placeholder="请填写" />
+    </form-item>
+    <form-item label="拼色方案备注说明">
+      <input bindinput="inputChange"
+        data-obj="pasterInfo"
+        data-key="remark"
+        value="{{pasterInfo.remark}}"
+        placeholder="请填写" />
+    </form-item>
+    <form-title value="销售信息"/>
+    <form-item label="姓名" required>
+      <input bindinput="inputChange"
+        data-obj="saleInfo"
+        data-key="name"
+        value="{{saleInfo.name}}"
+        placeholder="请填写" />
+    </form-item>
+    <form-item label="电话">
+      <input bindinput="inputChange"
+        data-obj="saleInfo"
+        data-key="mobile"
+        value="{{saleInfo.mobile}}"
+        placeholder="请填写" />
+    </form-item>
+    <form-item label="销售价格" required>
+      <input
+        bindinput="inputChange"
+        data-obj="saleInfo"
+        data-key="price"
+        value="{{saleInfo.price}}"
+        placeholder="请填写" />
+    </form-item>
+  </view>
+  <view wx:elif="{{step === 1}}">
+    <view>
+      <form-title value="施工技师"/>
+    </view>
+    <view wx:for="{{technician}}" wx:key="index">
+      <form-item label="姓名" required>
+        <input
+          bindinput="inputChange"
+          value="{{technician[index].name}}"
+          data-index="{{index}}"
+          data-obj="technician"
+          data-key="name"
+          placeholder="请填写" />
+      </form-item>
+      <form-item label="电话">
+        <input
+          bindinput="inputChange"
+          value="{{technician[index].mobile}}"
+          data-index="{{index}}"
+          data-obj="technician"
+          data-key="mobile"
+          placeholder="请填写" />
+      </form-item>
+    </view>
+    <form-title value="施工部门"/>
+    <form-item label="施工部位" type="pick" required>
+      <picker
+        bindchange="partChange"
+        value="{{partIndex}}"
+        range="{{partList}}"
+        range-key="value">
+        <view class="picker">{{partList[partIndex].value || "请选择"}}</view>
+      </picker>
+    </form-item>
+    <form-item label="其他部位或拼色说明">
+      <input
+        bindinput="inputChange"
+        data-obj="construction"
+        data-key="remark"
+        value="{{construction.remark}}"
+        placeholder="请填写" />
+    </form-item>
+    <form-item label="安装日期" type="pick" required>
+      <picker
+        mode="date"
+        bindchange="inputChange"
+        data-obj="construction"
+        data-key="installDate"
+        start="2015-09-01"
+        end="2017-09-01"
+        value="{{construction.installDate}}"
+      >
+        <view class="picker">{{construction.installDate || "请选择"}}</view>
+      </picker>
+    </form-item>
+    <form-item label="交车日期" type="pick" required>
+      <picker
+        mode="date"
+        bindchange="inputChange"
+        data-obj="construction"
+        data-key="handleDate"
+        start="2015-09-01"
+        end="2017-09-01"
+        value="{{construction.handleDate}}"
+      >
+        <view class="picker">{{construction.handleDate || "请选择"}}</view>
+      </picker>
+    </form-item>
+    <form-item label="质保年限" type="pick" required>
+      <picker
+        bindchange="qualityTimeChange"
+        value="{{qualityTimeIndex}}"
+        range="{{qualityTimeList}}"
+        range-key="value">
+        <view class="picker">{{qualityTimeList[qualityTimeIndex].value || "请选择"}}</view>
+      </picker>
+    </form-item>
+  </view>
+  <view wx:else="{{step === 1}}">
+    <form-title value="车主信息"/>
+    <form-item label="姓名" required>
+      <input
+        bindinput="inputChange"
+        data-obj="driver"
+        data-key="name"
+        value="{{driver.name}}"
+        placeholder="请填写" />
+    </form-item>
+    <form-item label="电话" required>
+      <input
+        bindinput="inputChange"
+        data-obj="driver"
+        data-key="mobile"
+        value="{{driver.mobile}}"
+        placeholder="请填写" />
+    </form-item>
+    <form-item label="车牌号码" required>
+      <input
+        bindinput="inputChange"
+        data-obj="driver"
+        data-key="carNumber"
+        value="{{driver.carNumber}}"
+        placeholder="请填写" />
+    </form-item>
+    <form-item label="车架号码" required>
+      <input
+        bindinput="inputChange"
+        data-obj="driver"
+        data-key="frameNumber"
+        value="{{driver.frameNumber}}"
+        placeholder="请填写" />
+    </form-item>
+    <form-item label="受保车型" type="pick" required>
+      <picker
+        bindchange="styleChange"
+        value="{{styleIndex}}"
+        range="{{styleList}}"
+        range-key="value">
+        <view class="picker">{{styleList[styleIndex].value || "请选择"}}</view>
+      </picker>
+    </form-item>
+  </view>
+  <view class="btn-con">
+    <view class="lbtn wbtn" wx:if="{{step}}" bindtap="next" data-step="-1">上一步</view>
+    <view class="lbtn" bindtap="next" data-step="1" >{{step === 2 ? '提交' : '下一步'}}</view>
+  </view>
+</view>

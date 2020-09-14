@@ -1,0 +1,33 @@
+<view class="list">
+  <search class="search" placeholder="请输入用户手机号" bindconfirm="confirm"/>
+  <view class="item" wx:for="{{qualityList}}" wx:key="index">
+    <view>姓名：{{item.driver.name}}</view>
+    <view>手机号：{{item.driver.mobile}}</view>
+    <button
+      class="edit"
+      size="mini"
+      type="primary"
+      data-id="{{item._id}}"
+      bindtap="handleDetail"
+    >详情</button>
+    <button
+      class="edit"
+      size="mini"
+      type="primary"
+      data-id="{{item._id}}"
+      bindtap="handleEdit"
+    >编辑</button>
+    <button
+      class="del"
+      size="mini"
+      type="warn"
+      data-id="{{item._id}}"
+      bindtap="handleDel"
+    >删除</button>
+  </view>
+  <image
+    class="add"
+    src="cloud://production-j3smc.7072-production-j3smc-1303038162/img/add.png"
+    bindtap="handleEdit"
+    />
+</view>

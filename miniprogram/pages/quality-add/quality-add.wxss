@@ -1,0 +1,19 @@
+.title {
+  font-size: 34rpx;
+  font-weight: bold;
+  margin: 20rpx 0 40rpx;
+}
+.btn-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60rpx 0 40rpx;
+}
+.lbtn {
+  flex: 1 1 auto;
+}
+.wbtn {
+  flex: 0 0 auto;
+  background: #777;
+  margin-right: 30rpx;
+}

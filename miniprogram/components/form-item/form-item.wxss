@@ -1,0 +1,32 @@
+.label-item {
+  display: flex;
+  align-items: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #808080;
+}
+.left {
+  display: flex;
+  align-items: center;
+  color: #eee;
+  font-weight: bold;
+}
+.required {
+  color: red;
+  width: 40rpx;
+  flex: 0 0 20rpx;
+  margin-right: 10rpx;
+}
+.right {
+  flex: 1 1 auto;
+  text-align: right;
+}
+.pick {
+  color: #808080;
+  padding-right: 50rpx;
+  background: url("https://7072-production-j3smc-1303038162.tcb.qcloud.la/img/arrow-right.png?sign=653ff9e84e7878db7a7c6f50e920fc57&t=1599897482");
+  background-size: 40rpx 40rpx;
+  background-position: right center;
+  background-repeat: no-repeat;
+}

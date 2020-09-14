@@ -1,0 +1,14 @@
+.bg {
+  margin: 60rpx 0 0;
+  width: 140rpx;
+  height: 140rpx;
+  background: url('https://7072-production-j3smc-1303038162.tcb.qcloud.la/img/upload.png?sign=f54a019e549501c2d073a67604e134e3&t=1600010549') center 30rpx no-repeat #454545;
+  background-size: 40rpx 40rpx;
+}
+.bg view {
+  width: 100%;
+  text-align: center;
+  padding: 80rpx 0 0;
+  font-size: 24rpx;
+  color: #808080;
+}

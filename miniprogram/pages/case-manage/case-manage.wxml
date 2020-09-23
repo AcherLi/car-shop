@@ -14,10 +14,11 @@
         size="mini"
         type="primary"
         data-id="{{item._id}}"
-        bindtap="handleDetail"
+        data-url="case-detail"
+        bindtap="navTo"
       >详情</button>
       <button
-        wx:if="{{current === 1}}"
+        wx:if="{{current === 1 || current === 3}}"
         class="edit"
         size="mini"
         type="primary"
@@ -26,7 +27,7 @@
         bindtap="navTo"
       >编辑</button>
       <button
-        wx:if="{{current !== 2}}"
+        wx:if="{{current == 0 || current == 1}}"
         class="edit"
         size="mini"
         type="primary"

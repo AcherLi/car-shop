@@ -1,0 +1,13 @@
+.add {
+  position: fixed;
+  bottom: 120rpx;
+  right: 60rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.list {
+  padding: 20rpx 30rpx 40rpx;
+}
+button {
+  margin: 20rpx 20rpx 0 0;
+}

@@ -52,11 +52,23 @@ function delWarranty(id) {
   return invokeCloud('generic', { action: 'delete', table: 'warranty', param: { _id: id }})
 }
 
-function getCase(page = 1, status = 0) {
+function searchWarranty(mobile, carNumber, frameNumber, rollNumber) {
+  const obj = {}
+  if (mobile) obj['driver.mobile'] = mobile
+  if (carNumber) obj['driver.carNumber'] = carNumber
+  if (frameNumber) obj['driver.frameNumber'] = frameNumber
+  if (rollNumber) obj['pasterInfo.rollNumber'] = rollNumber
+  const param = {
+    where: obj
+  }
+  return invokeCloud('generic', {action: 'list', table: 'warranty', param: param, })
+}
+
+function getCase(page = 1, status = 0, pageSize = 20) {
   const param = {
     orderBy: ["createTime", "desc",],
     paging: {
-      pageSize: 10,
+      pageSize,
       pageNumber: page,
     },
     where: {
@@ -78,8 +90,38 @@ function getCaseById(id) {
   }})
 }
 
-function delCase(id) {
-  return invokeCloud('generic', { action: 'delete', table: 'case', param: { _id: id }})
+function delCase(param) {
+  return invokeCloud('generic', { action: 'delete', table: 'case', param })
+}
+
+function getRecommand(page = 1, status = 0, pageSize = 20) {
+  const param = {
+    orderBy: ["createTime", "desc",],
+    paging: {
+      pageSize,
+      pageNumber: page,
+    },
+    where: {
+      status,
+    }
+  }
+  return invokeCloud('generic', {action: 'list', table: 'recommand', param, })
+}
+
+function addRecommand(param) {
+  return invokeCloud('generic', {action: param._id ? 'edit' : 'add', table: 'recommand', param, })
+}
+
+function getRecommandById(id) {
+  return invokeCloud('generic', {action: 'list', table: 'recommand', param: {
+    where: {
+      "_id": id
+    }
+  }})
+}
+
+function delRecommand(param) {
+  return invokeCloud('generic', { action: 'delete', table: 'recommand', param })
 }
 
 export {
@@ -91,8 +133,13 @@ export {
   addWarranty,
   getWarrantyById,
   delWarranty,
+  searchWarranty,
   getCase,
   addCase,
   getCaseById,
   delCase,
+  getRecommand,
+  addRecommand,
+  getRecommandById,
+  delRecommand,
 }

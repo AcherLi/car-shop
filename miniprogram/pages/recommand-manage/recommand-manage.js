@@ -1,46 +1,44 @@
-import { getCase, addCase, delCase } from '../../services/cloudApi'
+import { getRecommand, addRecommand, delRecommand } from '../../services/cloudApi'
 
 Page({
   data: {
     tabList: [
       '分享中',
-      '已下架',
-      '审核中',
-      '审核失败',
+      '下架中',
     ],
     current: 0,
-    caseList: [],
+    recommandList: [],
     total: 0,
     page: 1,
   },
   onShow () {
-    this.getCase()
+    this.getRecommand()
   },
   onPullDownRefresh() {
-    this.getCase()
+    this.getRecommand()
     this.setData({page: 1})
   },
   onReachBottom() {
     if (this.data.page * 20 < total) {
       const page = this.data.page + 1
-      this.getCase(page)
+      this.getRecommand(page)
     }
   },
-  async getCase(page, current = 0) {
+  async getRecommand(page, current = 0) {
     wx.showLoading({  title: '加载中' })
     try {
-      let { result: { list: { data }, total } } = await getCase(page, current || this.data.current)
+      let { result: { list: { data }, total } } = await getRecommand(page, current || this.data.current)
       data = data.map(v => ({
         ...v,
-        imgUrl: v.images[0]
+        imgUrl: v.logo
       }))
       let list = []
       if (page > 1) {
-        list = [...this.data.caseList, ...data]
+        list = [...this.data.recommandList, ...data]
       } else {
         list = data
       }
-      this.setData({ caseList: list, total })
+      this.setData({ recommandList: list, total })
       wx.hideLoading()
     } catch (error) {
       wx.showToast({ title: '加载质保数据失败' })
@@ -49,20 +47,20 @@ Page({
   navChange(e) {
     const { value } = e.detail
     this.setData({current: value})
-    this.getCase(1, 0)
+    this.getRecommand(1, 0)
     this.setData({page: 1})
   },
   async handleAction(e) {
     const { id, type } = e.currentTarget.dataset
     let param = {}
-    let action = addCase
+    let action = addRecommand
     if (type === 'del') {
-      action = delCase
+      action = delRecommand
       param = {
         _id: id
       }
-      const current = this.data.caseList.find(v => v._id === id)
-      const images = [...current.images]
+      const current = this.data.recommandList.find(v => v._id === id)
+      const images = [current.logo, ...current.images]
       wx.cloud.deleteFile({
         fileList: images,
         success: res => {
@@ -82,7 +80,7 @@ Page({
       wx.hideLoading()
       if (result.code === 0) {
         wx.showToast({ title: '操作成功' })
-        this.getCase()
+        this.getRecommand()
         this.setData({page: 1})
       }
     } catch (error) {

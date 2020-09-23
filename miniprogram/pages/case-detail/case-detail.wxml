@@ -1,0 +1,45 @@
+<view class="con">
+  <view class="common-item">
+    <view wx:if="{{item.views}}" class="common-count">{{item.views}}人浏览</view>
+    <swiper indicator-dots="true" autoplay="true" indicator-color="#E0E0E0" indicator-active-color="#D32F2F">
+      <block wx:for="{{case.images}}" wx:key="item">
+        <swiper-item>
+          <image class="item-image" src="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="title">{{case.title}}</view>
+  <view class="info">
+    <view class="user">
+      <image class="avatar" src="{{case.images[0]}}" />
+      <view>{{case.address || '未知店铺'}}</view>
+    </view>
+    <view class="date">{{case.date || '2020-09-09'}}</view>
+  </view>
+  <view class="desc">{{case.desc}}</view>
+  <image
+    class="list-img"
+    wx:for="{{case.images}}"
+    wx:key="index"
+    src="{{item}}" />
+  <view class="tips">分享至</view>
+  <view class="share">
+    <view class="share-item" bindtap="shareFrends" >
+      <image src="cloud://production-j3smc.7072-production-j3smc-1303038162/img/pyq.png" />
+      <view>生成海报</view>
+    </view>
+    <button class="share-item" open-type="share">
+      <image src="cloud://production-j3smc.7072-production-j3smc-1303038162/img/wx.png" />
+      <view>微信好友</view>
+    </button>
+  </view>
+  <!-- <view class="modal">
+    <view class="contain" catchlongpress="saveImg" catchtap="0">
+      <image src="{{case.images[0]}}" />
+
+    </view>
+  </view>
+  <canvas canvas-id="shareFrends"></canvas> -->
+</view>
+

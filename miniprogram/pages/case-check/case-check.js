@@ -60,7 +60,19 @@ Page({
     let param = {_id: id}
     let action = addCase
     if (type === 'del') {
-
+      action = delCase
+      param = {
+        _id: id
+      }
+      const current = this.data.caseList.find(v => v._id === id)
+      const images = [...current.images]
+      wx.cloud.deleteFile({
+        fileList: images,
+        success: res => {
+          console.log(res)
+        },
+        fail: console.error
+      })
     } else if (type == 'refuse') {
       param.status =  3 
     } else if (type == 'access') {

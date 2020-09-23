@@ -1,0 +1,11 @@
+<view class="con">
+  <image class="logo-img" src="{{recommand.logo}}" />
+  <view class="title">{{recommand.title}}</view>
+  <view class="text">详情</view>
+  <rich-text class="desc" nodes="{{recommand.nodes}}" />
+  <image
+    wx:for="{{recommand.images}}"
+    wx:key="index"
+    src="{{item}}"
+    class="list-img" />
+</view>

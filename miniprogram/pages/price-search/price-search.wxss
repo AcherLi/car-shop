@@ -1,0 +1,51 @@
+.header {
+  height: 300rpx;
+  padding: 40rpx 0 30rpx;
+  box-shadow: 0rpx 2rpx 4rpx #A51311;
+  background: url("https://7072-production-j3smc-1303038162.tcb.qcloud.la/person.png?sign=147d0bad78685d13011357d6aeef4d34&t=1599138640");
+  background-position: center bottom;
+  background-size: 100% auto;
+}
+.price{
+  font-size: 80rpx;
+  text-align: center;
+  margin: 60rpx 0 20rpx;
+}
+.desc {
+  text-align: center;
+  font-size: 28rpx;
+}
+.container {
+  margin: -40rpx 40rpx 0;
+  background: #383838;
+  box-shadow: 0rpx 2rpx 4rpx #383838;
+  padding: 40rpx 30rpx 100rpx;
+  border-radius: 4rpx;
+}
+picker {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  color: rgb(141, 141, 141);
+  border-bottom: 1rpx solid rgb(68, 68, 68);
+  background: url("https://7072-production-j3smc-1303038162.tcb.qcloud.la/img/arrow-right.png?sign=653ff9e84e7878db7a7c6f50e920fc57&t=1599897482");
+  background-size: 40rpx 40rpx;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+.btn-con {
+  margin: 60rpx 0 0;
+  display: flex;
+}
+.lbtn {
+  flex: 1 1 auto;
+}
+.tips {
+  font-size: 28rpx;
+  color: rgb(141, 141, 141);
+  margin-top: 40rpx;
+  line-height: 40rpx;
+}
+.bot {
+  margin: 60rpx 40rpx;
+}

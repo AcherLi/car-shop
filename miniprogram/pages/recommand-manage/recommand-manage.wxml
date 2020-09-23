@@ -6,7 +6,7 @@
   <view class="list">
     <common-view
       class="case-item"
-      wx:for="{{caseList}}"
+      wx:for="{{recommandList}}"
       wx:key="id"
       item="{{item}}">
       <button
@@ -14,27 +14,26 @@
         size="mini"
         type="primary"
         data-id="{{item._id}}"
-        data-url="case-detail"
+        data-url="recommand-detail"
         bindtap="navTo"
       >详情</button>
       <button
-        wx:if="{{current === 0}}"
         class="edit"
         size="mini"
         type="primary"
         data-id="{{item._id}}"
-        data-type="access"
-        bindtap="handleAction"
-      >通过</button>
+        data-url="recommand-add"
+        bindtap="navTo"
+      >编辑</button>
       <button
-        wx:if="{{current === 0}}"
+        wx:if="{{current == 0 || current == 1}}"
         class="edit"
         size="mini"
         type="primary"
         data-id="{{item._id}}"
-        data-type="refuse"
+        data-type="{{item.status === 0 ? 'down' : 'up'}}"
         bindtap="handleAction"
-      >拒绝</button>
+      >{{item.status === 0 ? '下架' : '上架'}}</button>
       <button
         class="del"
         size="mini"
@@ -45,4 +44,9 @@
       >删除</button>
     </common-view>
   </view>
+  <image
+    class="add"
+    src="cloud://production-j3smc.7072-production-j3smc-1303038162/img/add.png"
+    data-url="recommand-add"
+    bindtap="navTo"/>
 </view>

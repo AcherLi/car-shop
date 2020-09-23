@@ -10,11 +10,5 @@
       bindtap="handleDel"
     >删除</button>
   </view>
-  <view class="con">
-    <button
-      class="add"
-      type="primary"
-      bindtap="handleAdd"
-    >新增海报</button>
-  </view>
+  <upload-img bindchange="handleAdd" />
 </view>

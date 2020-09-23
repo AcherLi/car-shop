@@ -31,8 +31,12 @@
   text-overflow: ellipsis;
 }
 .common-mark {
+  height: 40rpx;
+  line-height: 40rpx;
   font-size: 24rpx;
-  color: #434343;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .common-con {
   padding: 10rpx 0 0;

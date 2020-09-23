@@ -3,9 +3,15 @@
     tabList="{{tabList}}"
     current="{{current}}"
     bindchange="navChange"/>
-  <scroll-view scroll-y="true" class="con">
+  <scroll-view scroll-y="true" class="cons">
     <view class="con-item" wx:if="{{current === 0}}">
-      <common-view class="example-item" wx:for="{{exampleList}}" wx:key="id" item="{{item}}"></common-view>
+      <common-view
+        class="example-item"
+        wx:for="{{caseList}}"
+        wx:key="id" item="{{item}}"
+        data-id="{{item._id}}"
+        data-url="case-detail"
+        bindtap="navTo"/>
     </view>
     <view class="con-item" wx:elif="{{current === 1}}">
       <normal-view wx:for="{{tecList}}" wx:key="index" item="{{item}}"/>

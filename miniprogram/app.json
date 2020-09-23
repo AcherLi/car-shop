@@ -12,7 +12,14 @@
     "pages/quality-detail/quality-detail",
     "pages/case-manage/case-manage",
     "pages/case-add/case-add",
-    "pages/case-check/case-check"
+    "pages/case-check/case-check",
+    "pages/case-detail/case-detail",
+    "pages/recommand-manage/recommand-manage",
+    "pages/recommand-add/recommand-add",
+    "pages/recommand-list/recommand-list",
+    "pages/recommand-detail/recommand-detail",
+    "pages/quality-search/quality-search",
+    "pages/price-search/price-search"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2b2b2b",

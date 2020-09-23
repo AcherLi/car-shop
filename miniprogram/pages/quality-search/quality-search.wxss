@@ -1,0 +1,24 @@
+.tips {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: #999;
+  line-height: 50rpx;
+  padding: 40rpx 0 60rpx;
+  text-align: center;
+}
+.btn-con {
+  margin: 100rpx 0 0;
+  display: flex;
+}
+.lbtn {
+  flex: 1 1 auto;
+}
+.con input {
+  display: block;
+  width: 100%;
+  height: 40rpx;
+  font-size: 30rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #999;
+}

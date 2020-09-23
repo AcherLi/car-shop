@@ -1,3 +1,5 @@
+import { getCase } from '../../services/cloudApi'
+
 const obj = {
   url: "https://7072-production-j3smc-1303038162.tcb.qcloud.la/person.png?sign=147d0bad78685d13011357d6aeef4d34&t=1599138640",
   imgUrl: "https://7072-production-j3smc-1303038162.tcb.qcloud.la/person.png?sign=147d0bad78685d13011357d6aeef4d34&t=1599138640",
@@ -18,47 +20,37 @@ Page({
     tecList: [obj, obj, obj],
     queList: [obj, obj, obj, obj],
     newList: [obj, obj, obj, obj, obj],
-    exampleList: [
-      {
-        id: 1,
-        imgUrl: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        desc: 'ViViTiger珍珠亮银色',
-        mark: '备注1' ,
-        count: 123,
-        avatar: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        nickName: '你好1234'
-      },
-      {
-        id: 2,
-        imgUrl: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        desc: 'ViViTiger珍珠亮银色',
-        mark: '备注1' ,
-        count: 123,
-        avatar: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        nickName: '你好1234'
-      },
-      {
-        id: 3,
-        imgUrl: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        desc: 'ViViTiger珍珠亮银色',
-        mark: '备注1' ,
-        count: 123,
-        avatar: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        nickName: '你好1234'
-      },
-      {
-        id: 4,
-        imgUrl: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        desc: 'ViViTiger珍珠亮银色',
-        mark: '备注1' ,
-        count: 123,
-        avatar: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        nickName: '你好1234'
-      }
-    ],
+    caseList: [],
+  },
+  onLoad() {
+    this.getCase()
   },
   navChange(e) {
     const { value } = e.detail
     this.setData({current: value})
-  }
+    if (value == 0) {
+      this.getCase()
+    }
+  },
+  async getCase() {
+    wx.showLoading({  title: '加载中' })
+    try {
+      let { result: { list: { data } } } = await getCase(1, 0, 8)
+      data = data.map(v => ({
+        ...v,
+        imgUrl: v.images[0]
+      }))
+      let list = data
+      this.setData({ caseList: list, })
+      wx.hideLoading()
+    } catch (error) {
+      wx.showToast({ title: '加载数据失败' })
+    }
+  },
+  navTo(e) {
+    const { url, id } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/${url}/${url}${id ? `?id=${id}` : ''}`,
+    })
+  },
 })

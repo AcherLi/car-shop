@@ -1,0 +1,43 @@
+.con {
+  padding: 20rpx 30rpx 40rpx;
+}
+.title {
+  padding: 20rpx;
+}
+input, textarea {
+  min-height: 80rpx;
+  padding: 20rpx;
+  line-height: 40rpx;
+  margin: 20rpx 0;
+  border: 1rpx solid #3f3e3e;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4rpx;
+}
+.banner-item {
+  display: flex;
+  margin-bottom: 40rpx;
+}
+.banner-item .del {
+  font-size: 26rpx;
+  line-height: 60rpx;
+  width: 110rpx;
+  height: 60rpx;
+  padding: 0;
+  margin-right: 0; 
+  background: #e64340;
+  color: #fff;
+}
+.banner-item .img {
+  width: 80%;
+  height: 380rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid #323232;
+}
+.btn-con {
+  margin: 60rpx 0 0;
+  display: flex;
+}
+.lbtn {
+  flex: 1 1 auto;
+}

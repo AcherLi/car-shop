@@ -9,37 +9,64 @@
   </swiper>
   <view class="tab-list">
     <view>
-      <view class="item-icon"></view>
+      <view
+        class="item-icon"
+        data-url="web-view"
+        data-src="https://mp.weixin.qq.com/s/fBuNh3oOPv6QWFj_4GrMMw"
+        bindtap="navTo"/>
       <text class="item-text">品牌介绍</text>
     </view>
     <view>
-      <view class="item-icon" data-url="quality-manage" bindtap="navTo"></view>
+      <view
+        class="item-icon quality"
+        data-url="quality-search"
+        bindtap="navTo"/>
       <text class="item-text">质保查询</text>
     </view>
     <view>
-      <view class="item-icon"></view>
+      <view class="item-icon price"
+        data-url="price-search"
+        bindtap="navTo"/>
       <text class="item-text">报价查询</text>
     </view>
     <view>
-      <view class="item-icon"></view>
+      <view class="item-icon merchant"
+        data-url="person"
+        bindtap="tabTo"/>
       <text class="item-text">经销商登录</text>
     </view>
   </view>
-  <view class="sub-title">
+  <view class="sub-title" data-url="recommand-list" bindtap="navTo">
     <view class="title-left">
       <image class="nav" src="../../asserts/img/nav.png"></image>
       <text>新品推荐</text>
     </view>
     <image class="arrow-right" src="../../asserts/img/right.png"></image>
   </view>
-  <view class="recommend">
-    <common-view class="recommend-item" wx:for="{{recommendList}}" wx:key="id" item="{{item}}"></common-view>
+  <view class="recommand">
+    <common-view
+      class="recommand-item"
+      wx:for="{{recommandList}}"
+      wx:key="id" item="{{item}}"
+      data-id="{{item._id}}"
+      data-url="recommand-detail"
+      bindtap="navTo"/>
   </view>
   <sub-title title="精彩案例" desc="- 选择我们的理由 -" />
   <view class="example-list">
-    <common-view class="example-item" wx:for="{{exampleList}}" wx:key="id" item="{{item}}"></common-view>
+    <common-view
+      class="example-item"
+      wx:for="{{caseList}}"
+      wx:key="id" item="{{item}}"
+      data-id="{{item._id}}"
+      data-url="case-detail"
+      bindtap="navTo"/>
   </view>
-  <view class="more">查看更多案例</view>
+  <view
+    class="more"
+    data-url="community"
+    bindtap="tabTo"
+  >查看更多案例</view>
   <sub-title title="产品优势" desc="- 6大核心优势 -" />
 
   <view class="superiority-list">

@@ -1,0 +1,26 @@
+<view class="con">
+  <view class="tips">通过手机号/车牌号/车架号/卷膜号任意一个都可以查询质保</view>
+  <input
+    bindinput="inputChange"
+    data-key="mobile"
+    value="{{mobile}}"
+    placeholder="请填写手机号" />
+  <input
+    bindinput="inputChange"
+    data-key="carNumber"
+    value="{{carNumber}}"
+    placeholder="请填写车牌号" />
+  <input
+    bindinput="inputChange"
+    data-key="frameNumber"
+    value="{{frameNumber}}"
+    placeholder="请填写车架号" />
+  <input
+    bindinput="inputChange"
+    data-key="rollNumber"
+    value="{{rollNumber}}"
+    placeholder="请填写卷膜号" />
+  <view class="btn-con">
+    <view class="lbtn" bindtap="submit" >查询</view>
+  </view>
+</view>

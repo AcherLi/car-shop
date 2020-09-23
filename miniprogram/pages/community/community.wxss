@@ -1,9 +1,8 @@
-.con {
+.cons {
   height: calc(100vh - 100rpx);
 }
-.con .con-item {
+.cons .con-item {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 40rpx 30rpx;

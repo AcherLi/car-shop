@@ -1,5 +1,5 @@
 <view class="common-item">
-  <view wx:if="{{item.count}}" class="common-count">{{item.views}}人浏览</view>
+  <view wx:if="{{item.views}}" class="common-count">{{item.views}}人浏览</view>
   <image class="common-image" src="{{item.imgUrl}}"></image>
   <view class="common-main">
     <view class="common-desc">{{item.title}}</view>

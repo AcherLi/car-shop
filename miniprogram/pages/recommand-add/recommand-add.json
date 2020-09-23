@@ -1,5 +1,4 @@
 {
-  "navigationBarTitleText": "banner管理",
   "usingComponents": {
     "upload-img": "../../components/upload-img/upload-img"
   }

@@ -1,0 +1,9 @@
+<view class="con">
+  <common-view
+    class="recommend-item"
+    wx:for="{{recommandList}}"
+    wx:key="id" item="{{item}}"
+    data-id="{{item._id}}"
+    data-url="recommand-detail"
+    bindtap="navTo"/>
+  </view>

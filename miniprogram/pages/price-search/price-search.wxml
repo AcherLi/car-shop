@@ -1,0 +1,34 @@
+<view>
+  <view class="header">
+    <view class="price">{{price}}</view>
+    <view class="desc">预计花费金额</view>
+  </view>
+  <view class="container">
+    <picker
+      bindchange="categoryChange"
+      value="{{categoryIndex}}"
+      range="{{categoryList}}"
+      range-key="value">
+      <view class="picker">{{categoryList[categoryIndex].value || "请选择"}}</view>
+    </picker>
+    <picker
+      bindchange="colorChange"
+      value="{{colorIndex}}"
+      range="{{colorList}}"
+      range-key="value">
+      <view class="picker">{{colorList[colorIndex].value || "请选择"}}</view>
+    </picker>
+    <picker
+      bindchange="styleChange"
+      value="{{styleIndex}}"
+      range="{{styleList}}"
+      range-key="value">
+      <view class="picker">{{styleList[styleIndex].value || "请选择"}}</view>
+    </picker>
+    <view class="btn-con">
+      <view class="lbtn" bindtap="submit" >查询</view>
+    </view>
+    <view class="tips">本次查询仅供参考，实际费用请连续授权门店</view>
+  </view>
+    <view class="tips bot">以上报价仅供参考，实际收费应按照车辆大小、使用的贴膜产品以及施工复杂程度计费，具体的贴膜颜色与施工价格，请前往授权施工店面当面咨询</view>
+</view>

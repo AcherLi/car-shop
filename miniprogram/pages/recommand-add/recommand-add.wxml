@@ -1,0 +1,44 @@
+<view class="con">
+  <view class="title">精彩推荐标题</view>
+  <input
+    placeholder="请填写分享的案例标题，不超过15字"
+    maxlength="15"
+    value="{{recommand.title}}"
+    data-type="title"
+    bindinput="change"/>
+  <view class="title">案例描述</view>
+  <textarea
+    placeholder="请填写分享案例的感想，不超过200字"
+    maxlength="200"
+    value="{{recommand.desc}}"
+    data-type="desc"
+    bindinput="change"/>
+  <view class="title">封面图片</view>
+  <view class="banner-item" wx:if="{{recommand.logo}}">
+    <image class="img" src="{{recommand.logo}}"></image>
+    <button
+      class="del"
+      size="mini"
+      type="warn"
+      data-id="{{recommand.logo}}"
+      bindtap="handleDelLogo"
+    >删除</button>
+  </view>
+  <upload-img bindchange="logoChange" />
+  <view class="title">图片展示</view>
+  <view class="banner-item" wx:for="{{recommand.images}}" wx:key="index">
+    <image class="img" src="{{item}}"></image>
+    <button
+      class="del"
+      size="mini"
+      type="warn"
+      data-index="{{index}}"
+      data-id="{{item}}"
+      bindtap="handleDel"
+    >删除</button>
+  </view>
+  <upload-img bindchange="imageChange" />
+  <view class="btn-con">
+    <view class="lbtn" bindtap="submit" >提交</view>
+  </view>
+</view>

@@ -22,6 +22,12 @@
   flex: 1 1 auto;
   text-align: right;
 }
+.normal {
+  padding: 20rpx 0;
+}
+.normal input {
+  flex: 1 1 auto;
+}
 .pick {
   color: #808080;
   padding-right: 50rpx;

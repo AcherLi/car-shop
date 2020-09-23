@@ -1,9 +1,9 @@
-<view class="label-item">
-  <view class="left">
+<view class="label-item {{label ? '' : 'normal'}}">
+  <view class="left" wx:if="label">
     <view class="required">{{required ? '*' : ''}}</view>
     <view class="label">{{label}}</view>
   </view>
-  <view class="right {{type}}">
+  <view class="{{label ? 'right' : 'left-in'}}  {{type}}">
     <slot></slot>
   </view>
 </view>

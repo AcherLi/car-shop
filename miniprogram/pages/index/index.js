@@ -1,72 +1,11 @@
 import { getBanner } from '../../services/cloudApi'
+import { getCase, getRecommand } from '../../services/cloudApi'
 
 Page({
   data: {
     bannerList: [],
-    recommendList: [
-      {
-        id: 1,
-        imgUrl: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        desc: 'ViViTiger珍珠亮银色定制版',
-        mark: '备注1' 
-      }, 
-      {
-        id: 2,
-        imgUrl: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        desc: 'ViViTiger珍珠亮银色',
-        mark: '备注1' 
-      },
-      {
-        id: 3,
-        imgUrl: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        desc: 'ViViTiger珍珠亮银色',
-        mark: '备注1' 
-      },
-      {
-        id: 4,
-        imgUrl: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        desc: 'ViViTiger珍珠亮银色',
-        mark: '备注1' 
-      }
-    ],
-    exampleList: [
-      {
-        id: 1,
-        imgUrl: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        desc: 'ViViTiger珍珠亮银色',
-        mark: '备注1' ,
-        count: 123,
-        avatar: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        nickName: '你好1234'
-      },
-      {
-        id: 2,
-        imgUrl: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        desc: 'ViViTiger珍珠亮银色',
-        mark: '备注1' ,
-        count: 123,
-        avatar: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        nickName: '你好1234'
-      },
-      {
-        id: 3,
-        imgUrl: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        desc: 'ViViTiger珍珠亮银色',
-        mark: '备注1' ,
-        count: 123,
-        avatar: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        nickName: '你好1234'
-      },
-      {
-        id: 4,
-        imgUrl: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        desc: 'ViViTiger珍珠亮银色',
-        mark: '备注1' ,
-        count: 123,
-        avatar: 'https://m0.autoimg.cn/cardfs/upload/spec/10003/800x0_q87_autohomecar__y_20111119102105864264.jpg',
-        nickName: '你好1234'
-      }
-    ],
+    recommandList: [],
+    caseList: [],
     superiorityList: [
       {
         id: 1,
@@ -139,6 +78,23 @@ Page({
     ]
   },
   async onShow() {
+    this.getBanner()
+    this.getCase()
+    this.getRecommand()
+  },
+  navTo(e) {
+    const { url, id, src } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/${url}/${url}${id ? `?id=${id}` : ''}${src ? `?url=${src}` : ''}`,
+    })
+  },
+  tabTo(e) {
+    const { url } = e.currentTarget.dataset
+    wx.switchTab({
+      url: `/pages/${url}/${url}`
+    })
+  },
+  async getBanner() {
     try {
       let { result: { data } } = await getBanner()
       data = data.map(v => v.url)
@@ -147,10 +103,34 @@ Page({
       wx.showToast({ title: '加载banner失败' })
     }
   },
-  navTo(e) {
-    const { url } = e.currentTarget.dataset
-    wx.navigateTo({
-      url: `/pages/${url}/${url}`,
-    })
+  async getCase() {
+    wx.showLoading({  title: '加载中' })
+    try {
+      let { result: { list: { data } } } = await getCase(1, 0, 6)
+      data = data.map(v => ({
+        ...v,
+        imgUrl: v.images[0]
+      }))
+      let list = data
+      this.setData({ caseList: list, })
+      wx.hideLoading()
+    } catch (error) {
+      wx.showToast({ title: '加载数据失败' })
+    }
+  },
+  async getRecommand() {
+    wx.showLoading({  title: '加载中' })
+    try {
+      let { result: { list: { data } } } = await getRecommand(1, 0, 4)
+      data = data.map(v => ({
+        ...v,
+        imgUrl: v.logo
+      }))
+      let list = data
+      this.setData({ recommandList: list, })
+      wx.hideLoading()
+    } catch (error) {
+      wx.showToast({ title: '加载数据失败' })
+    }
   },
 })

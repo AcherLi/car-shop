@@ -2,7 +2,7 @@ import { productList, styleList} from '../../config/config'
 
 Page({
   data: {
-    price: '￥100000',
+    price: 0,
     categoryList: productList,
     allColorlist: productList[0].colorList,
     colorList: [],
@@ -56,4 +56,13 @@ Page({
       styleIndex: index,
     })
   },
+  submit() {
+    wx.showLoading({
+      title: '查询中'
+    })
+    this.setData({
+      price: '￥100000'
+    })
+    wx.hideLoading()
+  }
 })

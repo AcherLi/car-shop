@@ -4,9 +4,11 @@ Page({
     case: {
       title: '',
       desc: '',
-      images: []
+      images: [],
+      address: '测试店铺',
     },
-    post_cover: "https://7072-production-j3smc-1303038162.tcb.qcloud.la/img/wx.png?sign=b3bd1b7578e95e7ede50e16d902829d1&t=1600095680",
+    visiable: false,
+    shareImg: ''
   },
   async onLoad(options) {
     const {id} =  options
@@ -20,57 +22,84 @@ Page({
       wx.showToast({ title: '获取数据失败', icon: 'none' })
     }
   },
+  hideModel() {
+    this.setData({visiable: false})
+  },
   shareFrends() {
-    // wx.showLoading({  title: '图片生成中'  })
-    // let that = this;
-    // wx.getImageInfo({
-    //   src: this.datacase.images[0],
-    //   success: res => {
-    //     console.log(res)
-    //     that.createdCode() 
-    //   }
-    // })
+    wx.showLoading({  title: '图片生成中'  })
+    wx.getImageInfo({
+      src: this.data.case.images[0],
+      success: res => {
+        this.createdCode(res.path) 
+      }
+    })
   },
   //开始绘图
-  createdCode() {
-    // 
+  createdCode(src) {
+    const ctx = wx.createCanvasContext('shareFrends');
+    ctx.save()
+    ctx.drawImage('../../asserts/img/white-bg.png', 0, 0, 300, 600);
+    ctx.drawImage(src, 20, 20, 275, 240);
+    ctx.fillStyle='#202020'
+    ctx.fillRect(20, 260, 275, 76);
+    ctx.fillStyle='#fff'
+    ctx.fillText(this.data.case.title, 30, 280);
+    ctx.setTextAlign('left');
+    ctx.drawImage(src, 30, 290, 20, 20);
+    ctx.fillStyle='#FF841D'
+    ctx.fillText(this.data.case.address || '测试店铺', 60, 304);
+    ctx.fillStyle='#999'
+    ctx.fillText(this.data.case.date || '2020-09-09', 214, 304);
+    ctx.fillStyle='#000'
+    ctx.fillText('长按图片保存至相册', 30, 370);
+    ctx.fillText('快去分享吧', 30, 390);
+    ctx.drawImage('../../asserts/img/qrcode.jpg', 234, 346, 60, 60);
+    ctx.draw()
+    setTimeout(() => {
+      wx.canvasToTempFilePath({
+        x: 0,
+        y: 0,
+        fileType: 'png',
+        canvasId: 'shareFrends',
+        success: res => {
+          this.setData({
+            shareImg: res.tempFilePath,
+            visiable: true
+          })
+          wx.hideLoading()
+        }
+      })
+    }, 500)
   },
-
   saveImg() {
-    let that = this;
     // 获取用户是否开启用户授权相册
     wx.getSetting({
-      success(res) {
+      success: res => {
         if (!res.authSetting['scope.writePhotosAlbum']) {
           wx.authorize({
             scope: 'scope.writePhotosAlbum',
-            success() {
-              wx.saveImageToPhotosAlbum({
-                filePath: that.data.shareImg,
-                success() {
-                  wx.showToast({ title: '保存成功' })
-                },
-                fail() {
-                  wx.showToast({ title: '保存失败', icon: 'none' })
-                }
-              })
+            success: () => {
+              this.save()
             },
             fail() {
               wx.showToast({ title: '保存失败', icon: 'none' })
             }
           })
         } else {
-          wx.saveImageToPhotosAlbum({
-            filePath: that.data.shareImg,
-            success() {
-              wx.showToast({ title: '保存成功' })
-            },
-            fail() {
-              wx.showToast({ title: '保存失败', icon: 'none' })
-            }
-          })
+          this.save()
         }
       }
     })
   },
+  save() {
+    wx.saveImageToPhotosAlbum({
+      filePath: this.data.shareImg,
+      success: () => {
+        wx.showToast({ title: '保存成功' })
+      },
+      fail: () => {
+        wx.showToast({ title: '保存失败', icon: 'none' })
+      }
+    })
+  }
 })

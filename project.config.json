@@ -69,9 +69,9 @@
 				},
 				{
 					"id": 1,
-					"name": "pages/price-search/price-search",
-					"pathName": "pages/price-search/price-search",
-					"query": "id=6057d84c5f60d5240008aafa33a36a94",
+					"name": "pages/case-detail/case-detail",
+					"pathName": "pages/case-detail/case-detail",
+					"query": "id=c54dac465f621c63001874960a130e60",
 					"scene": null
 				}
 			]

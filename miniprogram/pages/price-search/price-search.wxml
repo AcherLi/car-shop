@@ -1,6 +1,6 @@
 <view>
   <view class="header">
-    <view class="price">{{price}}</view>
+    <view class="price">{{price || '--'}}</view>
     <view class="desc">预计花费金额</view>
   </view>
   <view class="container">
@@ -26,7 +26,7 @@
       <view class="picker">{{styleList[styleIndex].value || "请选择"}}</view>
     </picker>
     <view class="btn-con">
-      <view class="lbtn" bindtap="submit" >查询</view>
+      <view class="lbtn" bindtap="submit">查询</view>
     </view>
     <view class="tips">本次查询仅供参考，实际费用请连续授权门店</view>
   </view>
